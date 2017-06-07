@@ -20,6 +20,8 @@
 		8F1CEEC81ECDBD1C0058B708 /* SwiftOpenAPIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1CEEC71ECDBD1C0058B708 /* SwiftOpenAPIUITests.swift */; };
 		8F1CEED61ECDC0E00058B708 /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1CEED51ECDC0E00058B708 /* MovieListViewController.swift */; };
 		8F1CEED81ECDC1120058B708 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1CEED71ECDC1120058B708 /* MovieCell.swift */; };
+		8FACB5421EE805B300E9FF53 /* NetworkAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FACB5411EE805B300E9FF53 /* NetworkAgent.swift */; };
+		8FACB5441EE805F600E9FF53 /* MovieDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FACB5431EE805F600E9FF53 /* MovieDataProvider.swift */; };
 		DDCEAB567E7054A5B7791BCA /* Pods_SwiftOpenAPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375FC52F8DBBB8EFBF16574D /* Pods_SwiftOpenAPITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +63,8 @@
 		8F1CEEC91ECDBD1C0058B708 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F1CEED51ECDC0E00058B708 /* MovieListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
 		8F1CEED71ECDC1120058B708 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		8FACB5411EE805B300E9FF53 /* NetworkAgent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAgent.swift; sourceTree = "<group>"; };
+		8FACB5431EE805F600E9FF53 /* MovieDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDataProvider.swift; sourceTree = "<group>"; };
 		B6283C3459F64283A67671CE /* Pods-SwiftOpenAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftOpenAPI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftOpenAPI/Pods-SwiftOpenAPI.debug.xcconfig"; sourceTree = "<group>"; };
 		BC6F8CFC6D4F8695FFAB5FEB /* Pods-SwiftOpenAPITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftOpenAPITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftOpenAPITests/Pods-SwiftOpenAPITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C14A0DCEAEEFA4014905526A /* Pods-SwiftOpenAPIUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftOpenAPIUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftOpenAPIUITests/Pods-SwiftOpenAPIUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 				8F1CEEA81ECDBD1C0058B708 /* Main.storyboard */,
 				8F1CEED71ECDC1120058B708 /* MovieCell.swift */,
 				8F1CEED51ECDC0E00058B708 /* MovieListViewController.swift */,
+				8FACB5411EE805B300E9FF53 /* NetworkAgent.swift */,
+				8FACB5431EE805F600E9FF53 /* MovieDataProvider.swift */,
 				8F1CEEAE1ECDBD1C0058B708 /* Assets.xcassets */,
 				8F1CEEB01ECDBD1C0058B708 /* LaunchScreen.storyboard */,
 				8F1CEEB31ECDBD1C0058B708 /* Info.plist */,
@@ -463,7 +469,9 @@
 				8F0D08D71ED30FAE00818C63 /* Movie.swift in Sources */,
 				8F1CEEA51ECDBD1C0058B708 /* AppDelegate.swift in Sources */,
 				8F1CEED81ECDC1120058B708 /* MovieCell.swift in Sources */,
+				8FACB5421EE805B300E9FF53 /* NetworkAgent.swift in Sources */,
 				8F1CEED61ECDC0E00058B708 /* MovieListViewController.swift in Sources */,
+				8FACB5441EE805F600E9FF53 /* MovieDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
