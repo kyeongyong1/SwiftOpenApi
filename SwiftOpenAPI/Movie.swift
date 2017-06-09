@@ -10,8 +10,7 @@ import Foundation
 
 class Movie {
     
-    
-    
-    
+    var title : String?
+    var openDate : String?
     
 }

@@ -16,12 +16,16 @@ class MovieListViewController : UICollectionViewController {
     
     override func viewDidLoad() {
         //requestMovieAPI()
+    
+        dataProvider = MovieDataProvider()
         
         dataProvider?.fetchData(date: NSDate())
         
+        for movie in (dataProvider?.movies)! {
+            print(movie.title!)
+        }
+    
     }
-    
-    
     
     /*
     func requestMovieAPI() {
@@ -54,66 +58,6 @@ class MovieListViewController : UICollectionViewController {
     }*/
     
     /*//
-     //  MovieListViewController.swift
-     //  SimpleMovie
-     //
-     //  Created by Coupang on 2017. 5. 16..
-     //  Copyright © 2017년 Coupang. All rights reserved.
-     //
-     
-     import UIKit
-     import Foundation
-     
-     class MovieListViewController : UICollectionViewController {
-     
-     lazy var list : [MovieValueObject] = {
-     var dataList = [MovieValueObject]()
-     return dataList
-     }()
-     
-     var currentDate : String?
-     override func viewDidLoad() {
-     let nowDate = NSDate()
-     let formatter = DateFormatter()
-     formatter.dateFormat = "yyyy-MM-dd"
-     var DateString = formatter.string(from: nowDate as Date)
-     DateString = DateString.replacingOccurrences(of: "-", with: "")
-     
-     currentDate = DateString
-     
-     requestMovieAPI()
-     }
-     
-     func requestMovieAPI() {
-     
-     //!처리 어떻게 해야될지
-     let url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=bd635d7ac0851ee9087d9c472912c1e8&targetDt=\(self.currentDate!)"
-     
-     let apiURL : URL! = URL(string: url)
-     let apiData = try! Data(contentsOf: apiURL)
-     //print(NSString(data: apiData, encoding: String.Encoding.utf8.rawValue) ?? "")
-     //let decodingData = NSString(data: apiData, encoding: String.Encoding.utf8.rawValue)?.data
-     do {
-     
-     let apiDictionary = try JSONSerialization.jsonObject(with: apiData, options: []) as! NSDictionary
-     let movieListResult = apiDictionary["movieListResult"] as! NSDictionary
-     let movieList = movieListResult["movieList"] as! NSArray
-     
-     for movie in movieList {
-     let thisMovie = movie as! NSDictionary
-     
-     let movieVO = MovieValueObject()
-     movieVO.title = thisMovie["movieNm"] as? String
-     movieVO.openDate = thisMovie["openDt"] as? String
-     
-     self.list.append(movieVO)
-     }
-     
-     } catch {
-     
-     }
-     
-     }
      
      override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
      
@@ -132,4 +76,5 @@ class MovieListViewController : UICollectionViewController {
      }
      }
 */
+    
 }
