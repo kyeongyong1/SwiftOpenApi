@@ -18,11 +18,14 @@ class MovieDataProvider {
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
-        var DateString = formatter.string(from: date as Date)
+        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())
+        var DateString = formatter.string(from: yesterday!)
         DateString = DateString.replacingOccurrences(of: "-", with: "")
         
+        print("\(DateString)")
+        
         //!처리 어떻게 해야될지
-        let url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=bd635d7ac0851ee9087d9c472912c1e8&targetDt=\(DateString)"
+        let url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=bd635d7ac0851ee9087d9c472912c1e8&targetDt=\(DateString)"
         
         let apiURL : URL! = URL(string: url)
         let apiData = try! Data(contentsOf: apiURL)
@@ -31,8 +34,8 @@ class MovieDataProvider {
         do {
             
             let apiDictionary = try JSONSerialization.jsonObject(with: apiData, options: []) as! NSDictionary
-            let movieListResult = apiDictionary["movieListResult"] as! NSDictionary
-            let movieList = movieListResult["movieList"] as! NSArray
+            let movieListResult = apiDictionary["boxOfficeResult"] as! NSDictionary
+            let movieList = movieListResult["dailyBoxOfficeList"] as! NSArray
             
             for movie in movieList {
                 let thisMovie = movie as! NSDictionary

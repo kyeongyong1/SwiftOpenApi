@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jfr-AK-Mwb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jfr-AK-Mwb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,24 +14,60 @@
         <scene sceneID="hzl-Hp-nW2">
             <objects>
                 <collectionViewController id="Eq3-7u-jnO" customClass="MovieListViewController" customModule="SwiftOpenAPI" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="dff-oc-fMS">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="dff-oc-fMS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xwU-qQ-iEu">
-                            <size key="itemSize" width="136" height="178"/>
+                            <size key="itemSize" width="108" height="176"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="a0P-rf-PR7" customClass="MovieCell" customModule="SwiftOpenAPI" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="136" height="178"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ListCell" id="a0P-rf-PR7" customClass="MovieCell" customModule="SwiftOpenAPI" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="108" height="176"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="136" height="178"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="108" height="176"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="openDate" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1p1-Zl-6rU">
+                                            <rect key="frame" x="13" y="147" width="59" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hW-Xe-cke" userLabel="title">
+                                            <rect key="frame" x="13" y="116.5" width="29" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8qM-hv-8wq">
+                                            <rect key="frame" x="104" y="8" width="1" height="160"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="1" id="MlD-ld-TS7"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="8qM-hv-8wq" firstAttribute="top" secondItem="a0P-rf-PR7" secondAttribute="topMargin" id="0sr-3K-Md6"/>
+                                    <constraint firstItem="0hW-Xe-cke" firstAttribute="top" secondItem="a0P-rf-PR7" secondAttribute="topMargin" constant="108.5" id="BGr-Nv-VVX"/>
+                                    <constraint firstItem="0hW-Xe-cke" firstAttribute="leading" secondItem="a0P-rf-PR7" secondAttribute="leadingMargin" constant="5" id="CYS-Jn-26u"/>
+                                    <constraint firstItem="1p1-Zl-6rU" firstAttribute="leading" secondItem="a0P-rf-PR7" secondAttribute="leadingMargin" constant="5" id="JNG-vO-Q98"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="8qM-hv-8wq" secondAttribute="bottom" id="Tvf-xH-7Q2"/>
+                                    <constraint firstItem="1p1-Zl-6rU" firstAttribute="top" secondItem="0hW-Xe-cke" secondAttribute="bottom" constant="10" id="eXx-o9-nlP"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="1p1-Zl-6rU" secondAttribute="bottom" constant="5" id="fPW-Fj-2nY"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="8qM-hv-8wq" secondAttribute="trailing" constant="-5" id="hOg-Ox-035"/>
+                                </constraints>
+                                <size key="customSize" width="108" height="176"/>
+                                <connections>
+                                    <outlet property="openDate" destination="1p1-Zl-6rU" id="IIE-Vl-Vmz"/>
+                                    <outlet property="title" destination="0hW-Xe-cke" id="ecg-vt-Ltb"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>

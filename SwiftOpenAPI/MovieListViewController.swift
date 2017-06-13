@@ -27,6 +27,21 @@ class MovieListViewController : UICollectionViewController {
     
     }
     
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let row = dataProvider?.movies?[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCell", for: indexPath) as! MovieCell
+        
+        cell.title.text = row?.title
+        cell.openDate.text = row?.openDate
+        
+        return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return (dataProvider?.movies?.count)!;
+    }
     /*
     func requestMovieAPI() {
         let url : String = "https://openapi.naver.com/v1/search/movie.json?query=%EC%A3%BC%EC%8B%9D"
